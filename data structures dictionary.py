@@ -1,66 +1,68 @@
-# Add a key to a dictionary.
-d = {0: 10, 1: 20}
-
-d[2] = 30
-
-print(d)
-
-
-# Concatenate multiple dictionaries.
-dic1 = {1: 10, 2: 20}
-dic2 = {3: 30, 4: 40}
-dic3 = {5: 50, 6: 60}
-
-result = {}
-
-result.update(dic1)
-result.update(dic2)
-result.update(dic3)
-
-print(result)
-
-
-# Check if a given key already exists in a dictionary.
-d = {1: "Apple", 2: "Banana", 3: "Mango"}
-
-key = int(input("Enter key: "))
-
-if key in d:
-    print("Key exists")
+logic building questions
+#1. positive, negative, zero
+num = int(input("Enter your number"))
+if num > 0:
+    print("POSITIVE")
+elif num < 0:
+    print("NEGATIVE")
 else:
-    print("Key does not exist")
+    print("ZERO")
+#2. odd or even
+if num%2==0:
+    print("even")
+else:
+    print("odd")
+#3. last digit
+a=int(input("enter first number: "))
+b=int(input("enter second number: "))
+if a%10 == b%10:
+    print("True")
+else:
+    print( False)
+#4. number 1 to 10
+for i in range(1,11):
+    print (i)
+#5. even number between 23 and 57
+for i in range (23, 57):
+    if i%2==0:
+        print(i)
+#6. prime numbers
+num = int(input("Enter a number: "))
 
+count = 0
 
-# Iterate over dictionaries using for loops.
-d = {
-    1: "Apple",
-    2: "Banana",
-    3: "Mango"
-}
+for i in range(1, num + 1):
+    if num % i == 0:
+        count += 1
 
-for key in d:
-    print(key, d[key])
+if count == 2:
+    print("Prime")
+else:
+    print("Not Prime")
+#7. prime numbers between 10 and 99
+for num in range(10, 100):
+    count = 0
 
+    for i in range(1, num + 1):
+        if num % i == 0:
+            count += 1
 
-# Generate and print a dictionary that contains a number (1 to n) in the form (x, x*x).
-n = int(input("Enter n: "))
-
-d = {}
-
-for i in range(1, n + 1):
-    d[i] = i * i
-
-print(d)
-
-
-# Sum all the values in a dictionary.
-d = {
-    "a": 100,
-    "b": 200,
-    "c": 300,
-    "d": 400
-}
-
-total = sum(d.values())
-
-print("Sum =", total)
+    if count == 2:
+        print(num, end=" ")
+        break
+#8. sum of all digits
+q= input("Enter a number")
+total = 0
+for digit in q:
+    total+=int(digit)
+print("sum of digits:", total)
+#9. reverse
+r= input("enter the number")
+reverse = r[::-1]
+print("reversed string:" , reverse)
+#10. palindrome
+s= input("enter a value")
+if s==s[::-1]:
+    print("is a palindrome")
+else:
+    print("is not a palindrome")
